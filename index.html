@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- prettier-ignore -->
+    <title>
+        Korosh Agha Mohammad Ghasemi | Data Scientist, ChemE
+    </title>
+    <link
+      rel="icon"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAnlJREFUWEftl71L6mEUx79q4AuRDoKCg1YQ1H/QEoSjk4O4iKCDSBdKaKmLVzNfelk0MkQUXzYR9xalhuZoSmrISW4qCDmoOOjlPJDDLfBRvHoHz/L78fx+nPM53+ec8/AIAAgB/ATwA4Aas7F3ADcAQgIAbgD+2cT9EuUXAfyeYeZ/E7wTwGBO2bOwC4CFAhMrsLS0BIVCgcFggGazyZ6TGDeAUCiEwWCAyWTC9vY2VldXIRKJWEwCSKfT8Hg8aLfbY3FwA1itVmSzWea82+3i5eUFHx8fUCqV2NzchEAgwO3tLYMcRw1ugOXlZUSjURQKBZRKJXQ6nWGmpAitSaVS7O7u4v7+nlsFboBRHnO5HMxmM9sGv59/sk8N4OzsDEdHR4jFYtjb2xvFO/w+EQB1gFqthkQiYfXQaDQQDAZxeHiIeDwOp9P5bwCMRiP29/dZF4jF4mEQKrper8fWrq+v2T+8xq0A7avbTSc38Pr6ioeHB5Y5qaFSqVjxaTQaXFxcsK3gNS6AjY0NlMtl0CwgmcPh8JdWI+kdDgdOTk7g8/l44/OdhuSYAlQqFaytrX3rPJVKwWaz4fj4GOfn59MFODg4QCQSwdvbG9bX17841+l0eHp6glwuh9frxenp6XQB9Ho9isUic2q329nY/bSdnR1kMhlWBzKZDFdXV3C5XNMFoL2/u7sDBSN7fn5GtVqFVqsF1cfj4yMSiQSbAdSWrVYLgUCAdcQo4ypCcrKysgIaNhaLhb2T1et1JJNJhEIhbG1tIZ/PD+NdXl4yoFHGDfDpiE5Akrvf76NWq4118HwHMzbAqIzG/b4AWCjwX1zN5n45nev1/A9wS/LRu7n9GwAAAABJRU5ErkJggg=="
+      type="image/x-icon"
+      sizes="32x32"
+    />
+    <meta
+      name="description"
+      content="With most of my experience in building user interfaces, I possess a solid experience in backend development. My expertise extends to creating scalable and high-performance systems, along with mentoring junior developers. My primary tools include TypeScript, React, and Node.js, and I have a keen interest in Rust. Over my 12-year career, I have gained experience working in both startups and and big companies."
+    />
+
+    <!-- prettier-ignore -->
+    <style>
+      :root {
+        --primary: 220.9 39.3% 11%;
+        --text-secondary: 220 8.9% 46.1%;
+        --text-primary-foreground: 210 20% 98%;
+        --accent: 220 14.3% 95.9%;
+        --accent-foreground: 220.9 39.3% 11%;
+        --border: 220 13% 91%;
+        --radius: 0.5rem;
+      }
+
+      *, :after, :before { box-sizing: border-box; }
+      body { font-family: "Inter", sans-serif; margin: 0; padding: 0; }
+      a { color: inherit; text-decoration: inherit; }
+      h1, h2, h3, h4, p { margin: 0; text-wrap: pretty; }
+      h1 { font-size: 1.5rem; line-height: 2rem; font-weight: 700; }
+      h2 { font-size: 1.25rem; line-height: 1.75rem; font-weight: 700; }
+      h3 { font-size: 1rem; line-height: 1.5rem; font-weight: 600; }
+      h4 { font-size: 0.875rem; line-height: 1.25rem; font-weight: 400; }
+      p { font-size: 0.875rem; line-height: 1.25rem }
+      address { font-size: 0.875rem; line-height: 1rem; font-style: normal; }
+
+      /* Positioning */
+      .relative { position: relative; }
+      .inline-flex { display: inline-flex; }
+      .flex { display: flex;}
+      .flex-1 { flex: 1 1 0%;}
+      .flex-col { flex-direction: column; }
+      .flex-wrap { flex-wrap: wrap; }
+      .items-center { align-items: center; }
+      .justify-center { justify-content: center; }
+      .justify-between { justify-content: space-between; }
+
+      /* Colors */
+      .bg-primary\/80 { background-color: hsl(var(--primary) / 0.8); }
+
+      /* Spacing */
+      .p-4 { padding: 1rem; }
+      .pt-1 { padding-top: 0.25rem; }
+      .py-0\.5 { padding-top: 0.125rem; padding-bottom: 0.125rem; }
+      .px-2 { padding-left: 0.5rem; padding-right: 0.5rem }
+      .mt-2 { margin-top: 0.5rem; }
+      .mx-auto { margin-left: auto; margin-right: auto; }
+      .space-y-1\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.375rem; }
+      .space-y-8 > :not([hidden]) ~ :not([hidden]) { margin-top: 2rem; }
+      .gap-1 { gap: 0.25rem; }
+      .gap-x-1 { column-gap: 0.25rem; }
+      .gap-y-3 { row-gap: 0.75rem; }
+      .gap-x-1\.5 { column-gap: 0.375rem; }
+      .h-3 { height: 0.75rem; }
+      .w-3 { width: 0.75rem; }
+      .h-4 { height: 1rem; }
+      .w-4 { width: 1rem; }
+      .h-8 { height: 2rem; }
+      .w-8 { width: 2rem; }
+      .h-28 { width: 7rem; }
+      .w-28 { width: 7rem; }
+      .max-w-md { max-width: 28rem; }
+      .max-w-2xl { max-width: 42rem; }
+      .scroll-my-12 { scroll-margin-top: 3rem; scroll-margin-bottom: 3rem; }
+
+        /* Appearence */
+      .hidden { display: none; }
+      .rounded-md { border-radius: calc(var(--radius) - 2px); }
+      .rounded-xl { border-radius: 0.75rem; }
+      .border { border: 1px solid hsl(var(--border));}
+
+      /* Text & Fonts */
+      .text-base { font-size: 1rem; line-height: 1.5rem; }
+      .text-sm { font-size: .875rem;; line-height: 1.25rem; }
+      .text-xs { font-size: .75rem; line-height: 1rem; }
+      .text-secondary { color: hsl(var(--text-secondary)); }
+      .text-primary-foreground { color: hsl(var(--text-primary-foreground)); }
+      .font-semibold { font-weight: 600; }
+      .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace; }
+      .leading-none { line-height: 1; }
+      .tabular-nums { font-variant-numeric: tabular-nums; }
+      .hover\:underline:hover { text-decoration-line: underline; }
+
+      /* Hover & Transitions */
+      .hover\:text-accent-foreground:hover { color: hsl(var(--accent-foreground)); }
+      .hover\:bg-accent:hover { background-color: hsl(var(--accent)); }
+
+      /* Media Overrides */
+      @media (min-width: 768px) { .md\:p-16 { padding: 4rem; } }
+      @media print { .p-12 { padding: 3rem; } }
+      @media print { .print\:hidden { display: none; } }
+      @media print { .print\:flex { display: block; } }
+    </style>
+  </head>
+
+  <body>
+    <main
+      class="relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12"
+    >
+      <div class="max-w-2xl mx-auto space-y-8">
+        <div class="flex items-center">
+          <div class="flex-1 space-y-1.5">
+            <h1>Korosh Ghasemi </h1>
+            <p class="max-w-md font-mono text-secondary">
+                Data Scientist, Python Developer, Chemical Engineering
+            </p>
+            <address class="font-mono text-xs text-secondary">
+              <a
+                class="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+                href="https://www.google.com/maps/place/Bushehr,+Bushehr+Province,+Iran/@28.9372844,50.7545018,12z/data=!3m1!4b1!4m6!3m5!1s0x3fb44f4d045170dd:0x6c265c100e277ba6!8m2!3d28.9144913!4d50.8279019!16zL20vMDFkNTJj?entry=ttu"
+                target="_blank"
+              >
+                <svg
+                  class="h-3 w-3"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path
+                    d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"
+                  ></path>
+                  <path d="M2 12h20"></path>
+                </svg>
+                Bushehr, Iran
+              </a>
+            </address>
+            <div class="flex gap-x-1 pt-1 print:hidden">
+              <a
+                href="mailto:koroshuni@gmail.com"
+                class="inline-flex items-center justify-center rounded-md text-sm border border-input hover:bg-accent hover:text-accent-foreground h-8 w-8 text-secondary"
+              >
+              <svg width="18px" height="18px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" fill="currentColor" /></svg>
+              </a>
+              <a
+                target="_blank"
+                href="https://github.com/koroshkorosh1"
+                class="inline-flex items-center justify-center rounded-md text-sm border border-input hover:bg-accent hover:text-accent-foreground h-8 w-8 text-secondary"
+              >
+              <svg width="18px" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.976 0A7.977 7.977 0 000 7.976c0 3.522 2.3 6.507 5.431 7.584.392.049.538-.196.538-.392v-1.37c-2.201.49-2.69-1.076-2.69-1.076-.343-.93-.881-1.175-.881-1.175-.734-.489.048-.489.048-.489.783.049 1.224.832 1.224.832.734 1.223 1.859.88 2.3.685.048-.538.293-.88.489-1.076-1.762-.196-3.621-.881-3.621-3.964 0-.88.293-1.566.832-2.153-.05-.147-.343-.978.098-2.055 0 0 .685-.196 2.201.832.636-.196 1.322-.245 2.007-.245s1.37.098 2.006.245c1.517-1.027 2.202-.832 2.202-.832.44 1.077.146 1.908.097 2.104a3.16 3.16 0 01.832 2.153c0 3.083-1.86 3.719-3.62 3.915.293.244.538.733.538 1.467v2.202c0 .196.146.44.538.392A7.984 7.984 0 0016 7.976C15.951 3.572 12.38 0 7.976 0z" fill="currentColor"/>
+              </svg>
+              </a>
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/koroshkorosh1/"
+                class="inline-flex items-center justify-center rounded-md text-sm border border-input hover:bg-accent hover:text-accent-foreground h-8 w-8 text-secondary"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4"
+                >
+                  <title>LinkedIn</title>
+                  <path
+                    fill="currentColor"
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                target="_blank"
+                href="https://twitter.com/koroshkorosh11"
+                class="inline-flex items-center justify-center rounded-md text-sm border border-input hover:bg-accent hover:text-accent-foreground h-8 w-8 text-secondary"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4"
+                >
+                  <title>X</title>
+                  <path
+                    fill="currentColor"
+                    d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+                  ></path>
+                </svg>
+              </a>
+
+              <a
+                target="_blank"
+                href="https://t.me/koroshkorosh1"
+                class="inline-flex items-center justify-center rounded-md text-sm border border-input hover:bg-accent hover:text-accent-foreground h-8 w-8 text-secondary"
+              >
+              <svg width="19.5px" height="19.5px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M41.4193 7.30899C41.4193 7.30899 45.3046 5.79399 44.9808 9.47328C44.8729 10.9883 43.9016 16.2908 43.1461 22.0262L40.5559 39.0159C40.5559 39.0159 40.3401 41.5048 38.3974 41.9377C36.4547 42.3705 33.5408 40.4227 33.0011 39.9898C32.5694 39.6652 24.9068 34.7955 22.2086 32.4148C21.4531 31.7655 20.5897 30.4669 22.3165 28.9519L33.6487 18.1305C34.9438 16.8319 36.2389 13.8019 30.8426 17.4812L15.7331 27.7616C15.7331 27.7616 14.0063 28.8437 10.7686 27.8698L3.75342 25.7055C3.75342 25.7055 1.16321 24.0823 5.58815 22.459C16.3807 17.3729 29.6555 12.1786 41.4193 7.30899Z" fill="currentColor"/>
+                </svg>
+              </a>
+
+              <a
+                target="_blank"
+                href="https://www.instagram.com/koroshkorosh1/"
+                class="inline-flex items-center justify-center rounded-md text-sm border border-input hover:bg-accent hover:text-accent-foreground h-8 w-8 text-secondary"
+              >
+               <svg width="19" height="19px" viewBox="0 0 24 24" id="meteor-icon-kit__regular-instagram" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.9962 0.0078125C8.73824 0.0078125 8.32971 0.021622 7.05019 0.080003C5.77333 0.138241 4.90129 0.341051 4.13824 0.637622C3.34938 0.944146 2.68038 1.35434 2.01343 2.02124C1.34652 2.68819 0.936333 3.35719 0.629809 4.14605C0.333238 4.9091 0.130429 5.78115 0.0721905 7.058C0.0138095 8.33753 0 8.74605 0 12.0041C0 15.262 0.0138095 15.6705 0.0721905 16.9501C0.130429 18.2269 0.333238 19.099 0.629809 19.862C0.936333 20.6509 1.34652 21.3199 2.01343 21.9868C2.68038 22.6537 3.34938 23.0639 4.13824 23.3705C4.90129 23.667 5.77333 23.8698 7.05019 23.9281C8.32971 23.9864 8.73824 24.0002 11.9962 24.0002C15.2542 24.0002 15.6627 23.9864 16.9422 23.9281C18.2191 23.8698 19.0911 23.667 19.8542 23.3705C20.643 23.0639 21.312 22.6537 21.979 21.9868C22.6459 21.3199 23.0561 20.6509 23.3627 19.862C23.6592 19.099 23.862 18.2269 23.9202 16.9501C23.9786 15.6705 23.9924 15.262 23.9924 12.0041C23.9924 8.74605 23.9786 8.33753 23.9202 7.058C23.862 5.78115 23.6592 4.9091 23.3627 4.14605C23.0561 3.35719 22.6459 2.68819 21.979 2.02124C21.312 1.35434 20.643 0.944146 19.8542 0.637622C19.0911 0.341051 18.2191 0.138241 16.9422 0.080003C15.6627 0.021622 15.2542 0.0078125 11.9962 0.0078125ZM11.9962 2.16929C15.1993 2.16929 15.5788 2.18153 16.8437 2.23924C18.0133 2.29257 18.6485 2.488 19.0712 2.65229C19.6312 2.86991 20.0308 3.12986 20.4506 3.54967C20.8704 3.96943 21.1303 4.36905 21.348 4.929C21.5122 5.35172 21.7077 5.98691 21.761 7.15653C21.8187 8.42148 21.831 8.80091 21.831 12.0041C21.831 15.2071 21.8187 15.5866 21.761 16.8515C21.7077 18.0211 21.5122 18.6563 21.348 19.0791C21.1303 19.639 20.8704 20.0386 20.4506 20.4584C20.0308 20.8782 19.6312 21.1381 19.0712 21.3558C18.6485 21.5201 18.0133 21.7155 16.8437 21.7688C15.579 21.8265 15.1996 21.8388 11.9962 21.8388C8.79286 21.8388 8.41352 21.8265 7.14871 21.7688C5.97909 21.7155 5.3439 21.5201 4.92119 21.3558C4.36124 21.1381 3.96162 20.8782 3.54186 20.4584C3.1221 20.0386 2.8621 19.639 2.64448 19.0791C2.48019 18.6563 2.28476 18.0211 2.23143 16.8515C2.17371 15.5866 2.16148 15.2071 2.16148 12.0041C2.16148 8.80091 2.17371 8.42148 2.23143 7.15653C2.28476 5.98691 2.48019 5.35172 2.64448 4.929C2.8621 4.36905 3.12205 3.96943 3.54186 3.54967C3.96162 3.12986 4.36124 2.86991 4.92119 2.65229C5.3439 2.488 5.97909 2.29257 7.14871 2.23924C8.41367 2.18153 8.7931 2.16929 11.9962 2.16929ZM11.9962 16.0028C9.78776 16.0028 7.99748 14.2125 7.99748 12.0041C7.99748 9.79558 9.78776 8.00529 11.9962 8.00529C14.2047 8.00529 15.995 9.79558 15.995 12.0041C15.995 14.2125 14.2047 16.0028 11.9962 16.0028ZM11.9962 5.84381C8.594 5.84381 5.836 8.60181 5.836 12.0041C5.836 15.4062 8.594 18.1642 11.9962 18.1642C15.3984 18.1642 18.1564 15.4062 18.1564 12.0041C18.1564 8.60181 15.3984 5.84381 11.9962 5.84381ZM18.3998 7.03996C19.1949 7.03996 19.8394 6.39548 19.8394 5.60043C19.8394 4.80538 19.1949 4.16086 18.3998 4.16086C17.6048 4.16086 16.9603 4.80538 16.9603 5.60043C16.9603 6.39548 17.6048 7.03996 18.3998 7.03996Z" fill="currentColor"/></svg>
+              </a>
+              <a
+                target="_blank"
+                href="https://github.com/koroshkorosh1/-My-CV/raw/main/CV.pdf"
+                class="inline-flex items-center justify-center rounded-md text-sm border border-input hover:bg-accent hover:text-accent-foreground h-8 w-8 text-secondary"
+              >
+              <svg width="17px" height="17px" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.70106 11.139L12.9281 19.7088V2C12.9281 1.44772 13.3758 1 13.9281 1C14.4804 1 14.9281 1.44772 14.9281 2V19.724L23.1806 11.1276C23.5631 10.7292 24.1832 10.7292 24.5657 11.1276L24.5949 11.158C24.9773 11.5564 24.9773 12.2024 24.5949 12.6008L14.6718 22.9373L14.6572 22.9528L14.6281 22.9831C14.6111 23.0009 14.5936 23.0178 14.5757 23.034C14.1909 23.3829 13.6069 23.3667 13.2407 22.9852L13.2115 22.9549C13.1929 22.9355 13.1753 22.9156 13.1585 22.8951L3.28685 12.6121C2.90438 12.2137 2.90438 11.5678 3.28685 11.1694L3.31601 11.139C3.69848 10.7406 4.31858 10.7406 4.70106 11.139Z" fill="#6b7280"/><path d="M4.01403 25C3.46174 25 3.01403 25.4477 3.01403 26C3.01403 26.5523 3.46174 27 4.01403 27H24.014C24.5663 27 25.014 26.5523 25.014 26C25.014 25.4477 24.5663 25 24.014 25H4.01403Z" fill="currentColor"/></svg>           
+          </a>
+
+            </div>
+            <div
+              class="hidden flex-col gap-x-1 font-mono text-sm text-secondary print:flex"
+            >
+              <span class="underline">koroshuni@gmail.com</span>
+            </div>
+          </div>
+          <img
+            class="flex rounded-xl h-28 w-28"
+            alt="koroshkorosh11"
+            src="https://avatars.githubusercontent.com/u/65099510?s=400&u=8d0de193f6bdf31aa5a844e3a0b4742d060a33f7&v=4"
+          />
+        </div>
+
+
+        <section class="flex flex-col gap-y-3">
+          <h2>About</h2>
+          <p class="font-mono text-secondary">
+            Hey! I’m Korosh Agha Mohammad Ghasemi. B.Sc. student at University of Shiraz and experienced with machine learning, deep learning, and Process Control. Chemical Engineering skilled in Python, and MATLAB focused on Machine Learning, and Deep Learning in Chemical Engineering. Innately an innovative, detail-oriented and leader person which leads to the capability to fast-recognize and solve problems and effectively handle high-pressure and time-limited situations. Adept at fast learning and highly motivated to expand knowledge in new areas of expertise by using transferable skills with an innate drive to succeed in them. Challenges and advancement in the world of science are appealing to me as well as simplicity.
+          </p>
+        </section>
+
+        <section class="flex flex-col gap-y-3">
+          <h2>Work Experience</h2>
+
+          <div>
+            <div class="flex flex-col space-y-1.5">
+              <div class="flex items-center justify-between text-base">
+                <h3
+                  class="inline-flex justify-center items-center leading-none"
+                >
+                  <a class="hover:underline" href="https://tapsi.ir/">TAPSI</a>
+                </h3>
+                <div class="text-sm tabular-nums text-secondary">
+                  2023<!-- -->
+                  -
+                  <!-- -->Present
+                </div>
+              </div>
+              <h4 class="leading-none font-mono">
+                Data Analyst
+              </h4>
+            </div>
+
+            <div class="text-secondary text-xs font-mono mt-2">
+                As a data analyst in our platform tribe, you collect, analyze, and present data to help people and organizations make better decisions. You use various tools and techniques to interpret data, identify patterns, and communicate insights.Redesign of Tapsi transportation software. In this new design, the first page of the software has been revised and a new summary idea has been proposed and presented to this software, which I hope will be added to this software soon. In this idea, the best route can be reached at the lowest cost and in the shortest time to several designated destinations, something that is not found in any software and is a new and interesting idea that can revolutionize the transportation industry.
+            </div>
+          </div>
+          <div>
+            <div class="flex flex-col space-y-1.5">
+              <div class="flex items-center justify-between text-base">
+                <h3
+                  class="inline-flex justify-center items-center leading-none"
+                >
+                  <a class="hover:underline" href="https://www.foumanchimie.com/">Fouman Chimie</a>
+                </h3>
+                <div class="text-sm tabular-nums text-secondary">
+                  2021<!-- -->
+                  -
+                  <!-- -->2024
+                </div>
+              </div>
+              <h4 class="leading-none font-mono">
+                Data Analyst
+              </h4>
+            </div>
+            <div class="text-secondary text-xs font-mono mt-2">
+                Machine Learning, Frameworks: 
+                SciPy, Scikit-learn, Pandas, NumPy, Matplotlib, TensorFlow, Keras, Kafka, Spark, PySpark, Kubeflow, TFX
+                With the rapid expanding of big data in all domains, data-driven and deep learning-based fault diagnosis methods in chemical industry have become a major research topic in recent years. In addition to a deep neural network, deep forest also provides a new idea for deep representation learning and overcomes the shortcomings of a deep neural network such as strong parameterdependence and large training cost.
+            </div>
+          </div>
+
+          <div>
+            <div class="flex flex-col space-y-1.5">
+              <div class="flex items-center justify-between text-base">
+                <h3
+                  class="inline-flex justify-center items-center leading-none"
+                >
+                  <a class="hover:underline" href="https://www.pytopia.ai/">PyTopia</a>
+                </h3>
+                <div class="text-sm tabular-nums text-secondary">
+                  2020<!-- -->
+                  -
+                  <!-- -->Present
+                </div>
+              </div>
+              <h4 class="leading-none font-mono">
+                Python Developer
+              </h4>
+            </div>
+            <div class="text-secondary text-xs font-mono mt-2">
+                A platform for data science online courses. We've organized the content into easy-to-follow modules, each containing hands-on examples and exercises to reinforce your learning. Feel free to explore at your own pace and dive into the topics that interest you the most. Our Python training covers a wide range of topics, including but not limited to: Python basics and syntax, Data types and structures, Control flow and loops, Functions and modules, Object-oriented programming , ...
+            </div>
+          </div>
+
+          <div>
+            <div class="flex flex-col space-y-1.5">
+              <div class="flex items-center justify-between text-base">
+                <h3
+                  class="inline-flex justify-center items-center leading-none"
+                >
+                  <a class="hover:underline" href="https://kheilisabz.com/">Kheilisabz</a>
+                </h3>
+                <div class="text-sm tabular-nums text-secondary">
+                  2019<!-- -->
+                  -
+                  <!-- -->20221
+                </div>
+              </div>
+              <h4 class="leading-none font-mono">
+                Book Editor
+              </h4>
+            </div>
+            <div class="text-secondary text-xs font-mono mt-2">
+                Chemistry Test Book
+            </div>
+          </div>
+
+        </section>
+
+        <section class="flex flex-col gap-y-3">
+          <h2>Education</h2>
+          <div>
+            <div class="flex flex-col space-y-1.5">
+              <div class="flex items-center justify-between gap-x-2 text-base">
+                <h3 class="font-semibold leading-none">
+                  Shiraz University
+                </h3>
+                <div class="text-sm tabular-nums text-secondary">
+                  2019<!-- -->
+                  -
+                  <!-- -->2023
+                </div>
+              </div>
+            </div>
+            <div class="font-mono text-sm text-secondary mt-2">
+                Bachelor of Science Chemical Engineering | (GPA:3.9/4)
+            </div>
+          </div>
+        </section>
+
+        <section class="flex flex-col gap-y-3">
+          <h2>Skills</h2>
+          <div class="flex flex-wrap gap-1">
+            <div
+              class="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold font-mono bg-primary/80 text-primary-foreground"
+            >
+            Python
+            </div>
+            <div
+              class="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold font-mono bg-primary/80 text-primary-foreground"
+            >
+            MATLAB
+            </div>
+            <div
+              class="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold font-mono bg-primary/80 text-primary-foreground"
+            >
+            C/C++
+            </div>
+            <div
+              class="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold font-mono bg-primary/80 text-primary-foreground"
+            >
+              JS
+            </div>
+            <div
+              class="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold font-mono bg-primary/80 text-primary-foreground"
+            >
+              Aspen+
+            </div>
+            <div
+              class="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold font-mono bg-primary/80 text-primary-foreground"
+            >
+            COMSOL
+            </div>
+            <div
+              class="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold font-mono bg-primary/80 text-primary-foreground"
+            >
+              Node.js
+            </div>
+            <div
+              class="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold font-mono bg-primary/80 text-primary-foreground"
+            >
+              MongoDB
+            </div>
+            <div
+              class="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold font-mono bg-primary/80 text-primary-foreground"
+            >
+              Rust
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
